@@ -14,7 +14,7 @@ engine = create_async_engine(
 async def init_db():
     try:
         async with engine.begin() as conn:
-            from src.books.models import Book
+            # from src.books.models import Book
             await conn.run_sync(SQLModel.metadata.create_all)
             print("Database initialized successfully")
     except Exception as e:

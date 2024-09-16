@@ -21,16 +21,21 @@ class User(SQLModel,table=True):
     last_name: str
 
     is_verified: bool = Field(default=False)
+    password: str = Field(
+        sa_column= Column(pg.VARCHAR,nullable=False),
+        exclude=True
+        )
+    
     created_at: datetime = Field(
         sa_column= Column(
             pg.TIMESTAMP,
-            default= datetime.now
+            default=datetime.now
         )
     )
     updated_at: datetime = Field(
-        Column(
+       sa_column= Column(
             pg.TIMESTAMP,
-            default= datetime.now
+            default=datetime.now
         )
     )
 

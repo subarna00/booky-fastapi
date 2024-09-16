@@ -3,7 +3,7 @@ import sqlalchemy.dialects.postgresql as pg
 from datetime import datetime, date
 import uuid
 
-class Book(SQLModel, table=True):
+class Books(SQLModel, table=True):
 
     __tablename__ = "books"
 
